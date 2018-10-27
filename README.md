@@ -98,3 +98,9 @@ showPictureBox({
 >IE10以上浏览器
 
 <br/>
+
+## 下载
+
+<br/>
+
+>git clone 
