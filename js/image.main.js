@@ -33,17 +33,17 @@ var showPictureBox = (function() {
         //获取全屏按钮元素
         var fullScreenButton = document.querySelector('.pic-fullscreen')
 
-        //存放图片地址
+        //存放图片地址列表
         var url = []
 
         //记录图片url对应数组的索引值
         var index
 
-        //定时器
+        //存放定时器引用
         var time
 
         //保存全屏状态
-        var status = false
+        var isFullScreen = false
 
         //图片自适应
         var nature = function(url) {
@@ -300,7 +300,7 @@ var showPictureBox = (function() {
         //给全屏按钮增加点击事件
         fullScreenButton.addEventListener('click',function() {
 
-            if(status == false) {
+            if(isFullScreen == false) {
 
                 fullScreen(picBox)
 
