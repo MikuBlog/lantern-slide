@@ -304,13 +304,13 @@ var showPictureBox = (function() {
 
                 fullScreen(picBox)
 
-                status = true
+                isFullScreen = true
 
             }else {
 
                 exitFullScreen()
 
-                status = false
+                isFullScreen = false
 
             }
 
