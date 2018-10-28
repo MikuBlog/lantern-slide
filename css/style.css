@@ -104,11 +104,3 @@
 .pic-box>.pic-arrow>i:hover {
     color:rgb(255, 255, 255);
 }
-
-@media screen and (min-width:0) and (max-width:776px) {
-
-    .pic-box {
-        font-size: 17px;
-    }
-
-}
