@@ -59,8 +59,8 @@
         <span class="pic-icon">
             <i class="fa fa-television fa-lg pic-fullscreen"></i>
         </span>
-        <span class="pic-icon pic-close">
-            <i class="fa fa-close fa-lg"></i>
+        <span class="pic-icon">
+            <i class="fa fa-close fa-lg pic-close"></i>
         </span>                    
     </div>
     <div class="pic-arrow pic-left">
