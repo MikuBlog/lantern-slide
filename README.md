@@ -69,7 +69,7 @@
     <div class="pic-arrow pic-right">
         <i class="fa fa-arrow-right fa-lg"></i>
     </div>
-    <img src="" class="pic-img">
+    <img class="pic-img">
 </div>
 ```
 
