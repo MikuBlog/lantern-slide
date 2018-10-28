@@ -11,6 +11,11 @@
     opacity: 0;
     background:rgba(0,0,0,.8);
     transition: .5s;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 /*盒子附加样式*/
@@ -86,11 +91,6 @@
     font-size: 1.5em;
     text-align: center;
     cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
 }
 
 .pic-box>.pic-left {
