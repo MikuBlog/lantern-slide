@@ -95,9 +95,9 @@ showPictureBox({
 
 <br/>
 
->在```image.main.min.js```末尾添加export default showPictureBox
+>在```image.main.min.js```末尾添加export default showPictureBox;
 
->在main.js引入```import showPictureBox from "./xxx/image.main.min.js```
+>在所需组件内引入```import showPictureBox from "./xxx/image.main.min.js```
 
 >在main.js引入```import './xxx/style.min.css'```
 
