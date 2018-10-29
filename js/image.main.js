@@ -42,9 +42,13 @@ var showPictureBox = (function() {
         //存放定时器引用
         var time
 
+        var time_2
+
+        var time_3
+
         //保存全屏状态
         var isFullScreen = false
-        
+
         //判断是否传入对象
         var config = obj || {}
 
@@ -145,6 +149,10 @@ var showPictureBox = (function() {
 
             clearInterval(time)
 
+            clearTimeout(time_2)
+
+            clearTimeout(time_3)
+
         }
 
         //显示播放按钮
@@ -162,6 +170,24 @@ var showPictureBox = (function() {
             stopButton.style.display = "block"
 
             playButton.style.display = "none"
+
+        }
+
+        //淡入图片
+        var showPic = function() {
+
+            img.classList.add('pic-img-show')
+
+            img.classList.remove('pic-img-hide')
+
+        }
+
+        //淡出图片
+        var hidePic = function() {
+
+            img.classList.add('pic-img-hide')
+
+            img.classList.remove('pic-img-show')
 
         }
 
@@ -195,7 +221,7 @@ var showPictureBox = (function() {
         }
 
         //退出全屏
-        var exitFullScreen = function(element) {
+        var exitFullScreen = function() {
 
             var exitMethod = document.exitFullscreen || //W3C
 
@@ -271,7 +297,13 @@ var showPictureBox = (function() {
 
             showStopButton()
 
-            time = setInterval(function() {
+            time_2 = setTimeout(function() {
+
+                hidePic()
+
+            },config.delay - 500 || 3000 - 500)
+
+            time_3 = setTimeout(function() {
 
                 if(index == url.length - 1) {
 
@@ -286,8 +318,38 @@ var showPictureBox = (function() {
                 nature(url[++index])
 
                 img.src = url[index]
+                
+            },config.delay || 3000 )
 
-            },config.delay||3000)
+            time = setInterval(function() {
+
+                showPic()
+
+                time_2 = setTimeout(function() {
+
+                    hidePic()
+
+                    },config.delay - 500 || 3000 - 500)
+
+                time_3 = setTimeout(function() {
+
+                    if(index == url.length - 1) {
+
+                        nature(url[index = 0])
+    
+                        img.src = url[index]
+    
+                        return
+    
+                    }
+    
+                    nature(url[++index])
+    
+                    img.src = url[index]
+                    
+                },config.delay || 3000 )
+
+            },config.delay || 3000)
 
         })
 
@@ -331,6 +393,8 @@ var showPictureBox = (function() {
                 img.src = value.src
 
                 index = ind
+
+                showPic()
 
             })
 
