@@ -11,14 +11,9 @@
     opacity: 0;
     background:rgba(0,0,0,.8);
     transition: .5s;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
 }
 
-/*盒子附加样式*/
+/*盒子附加淡入淡出样式*/
 .pic-box-show {
     opacity: 1;
     z-index:99;
@@ -46,6 +41,16 @@
     left:0;
     bottom:0;
     margin: auto;
+    transition: .5s;
+}
+
+/*图片附加淡入淡出样式*/
+.pic-img-show {
+    opacity: 1;
+}
+
+.pic-img-hide {
+    opacity: 0;
 }
 
 /*盒子按钮样式*/
