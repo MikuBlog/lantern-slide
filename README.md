@@ -122,6 +122,8 @@ showPictureBox({
 
 >在main.js引入```import './xxx/style.min.css'```
 
+>在相应的组件调用showPictureBox函数并传入配置参数即可
+
 <br/>
 
 ## 兼容性
