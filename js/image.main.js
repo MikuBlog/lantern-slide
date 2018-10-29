@@ -44,6 +44,9 @@ var showPictureBox = (function() {
 
         //保存全屏状态
         var isFullScreen = false
+        
+        //判断是否传入对象
+        var config = obj || {}
 
         //图片自适应
         var nature = function(url) {
@@ -284,7 +287,7 @@ var showPictureBox = (function() {
 
                 img.src = url[index]
 
-            },obj.delay||3000)
+            },config.delay||3000)
 
         })
 
