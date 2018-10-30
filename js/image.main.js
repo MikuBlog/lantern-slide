@@ -3,56 +3,56 @@ var showPictureBox = (function() {
 
     return function(obj) {
 
-        //获取图片盒子元素
+        // 获取图片盒子元素
         var picBox = document.querySelector('.pic-box')
 
-        //获取底幕元素
+        // 获取底幕元素
         var backElem = document.querySelector('.pic-back')
 
-        //获取图片元素
+        // 获取图片元素
         var images = document.querySelectorAll('.img-slide')
 
-        //获取盒子图片元素
+        // 获取盒子图片元素
         var img = document.querySelector('.pic-img')
 
-        //获取关闭按钮
+        // 获取关闭按钮
         var close = document.querySelector('.pic-close')
 
-        //获取左按钮元素
+        // 获取左按钮元素
         var leftArrow = document.querySelector('.pic-left')
 
-        //获取右按钮元素
+        // 获取右按钮元素
         var rightArrow = document.querySelector('.pic-right')
 
-        //获取播放按钮元素
+        // 获取播放按钮元素
         var playButton = document.querySelector('.pic-play')
 
-        //获取暂停按钮元素
+        // 获取暂停按钮元素
         var stopButton = document.querySelector('.pic-stop')
 
-        //获取全屏按钮元素
+        // 获取全屏按钮元素
         var fullScreenButton = document.querySelector('.pic-fullscreen')
 
-        //存放图片地址列表
+        // 存放图片地址列表
         var url = []
 
-        //记录图片url对应数组的索引值
+        // 记录图片url对应数组的索引值
         var index
 
-        //存放定时器引用
+        // 存放定时器引用
         var time
 
         var time_2
 
         var time_3
 
-        //保存全屏状态
+        // 保存全屏状态
         var isFullScreen = false
 
-        //判断是否传入对象
+        // 判断是否传入对象
         var config = obj || {}
 
-        //图片自适应
+        // 图片自适应
         var nature = function(url) {
 
             var image = new Image()
@@ -92,7 +92,7 @@ var showPictureBox = (function() {
 
         }
 
-        //点击事件回调函数
+        // 点击事件回调函数
         var handleClick = function(command) {
 
 
@@ -144,7 +144,7 @@ var showPictureBox = (function() {
 
         }
 
-        //暂停轮播
+        // 暂停轮播
         var stopTime = function () {
 
             clearInterval(time)
@@ -155,7 +155,7 @@ var showPictureBox = (function() {
 
         }
 
-        //显示播放按钮
+        // 显示播放按钮
         var showPlayButton = function() {
 
             playButton.style.display = "block"
@@ -164,7 +164,7 @@ var showPictureBox = (function() {
 
         }
 
-        //显示暂停按钮
+        // 显示暂停按钮
         var showStopButton = function() {
 
             stopButton.style.display = "block"
@@ -173,7 +173,7 @@ var showPictureBox = (function() {
 
         }
 
-        //淡入图片
+        // 淡入图片
         var showPic = function() {
 
             img.classList.add('pic-img-show')
@@ -182,7 +182,7 @@ var showPictureBox = (function() {
 
         }
 
-        //淡出图片
+        // 淡出图片
         var hidePic = function() {
 
             img.classList.add('pic-img-hide')
@@ -191,7 +191,7 @@ var showPictureBox = (function() {
 
         }
 
-        //全屏显示
+        // 全屏显示
         var fullScreen = function(element) {
 
             var requestMethod =element.requestFullScreen
@@ -220,7 +220,7 @@ var showPictureBox = (function() {
 
         }
 
-        //退出全屏
+        // 退出全屏
         var exitFullScreen = function() {
 
             var exitMethod = document.exitFullscreen || //W3C
@@ -247,14 +247,14 @@ var showPictureBox = (function() {
 
         }
 
-        //当屏幕大小发生改变时图片自适应屏幕
+        // 当屏幕大小发生改变时图片自适应屏幕
         window.addEventListener('resize',function() {
 
             nature(url[index])
 
         })
 
-        //给底幕增加点击事件，用于隐藏图片盒子
+        // 给底幕增加点击事件，用于隐藏图片盒子
         backElem.addEventListener('click',function() {
 
             handleClick('hide')
@@ -265,7 +265,7 @@ var showPictureBox = (function() {
 
         })
 
-        //给关闭按钮增加点击事件，用于隐藏图片盒子
+        // 给关闭按钮增加点击事件，用于隐藏图片盒子
         close.addEventListener('click',function() {
 
             handleClick('hide')
@@ -278,21 +278,21 @@ var showPictureBox = (function() {
 
         })
 
-        //给左箭头增加点击事件
+        // 给左箭头增加点击事件
         leftArrow.addEventListener('click',function() {
 
             handleClick("left")
 
         })
 
-        //给右箭头增加点击事件
+        // 给右箭头增加点击事件
         rightArrow.addEventListener('click',function() {
 
             handleClick("right")
 
         })
 
-        //给播放按钮增加点击事件
+        // 给播放按钮增加点击事件
         playButton.addEventListener('click',function() {
 
             showStopButton()
@@ -353,7 +353,7 @@ var showPictureBox = (function() {
 
         })
 
-        //给暂停按钮增加点击事件,暂停轮播
+        // 给暂停按钮增加点击事件,暂停轮播
         stopButton.addEventListener('click',function() {
 
             showPlayButton()
@@ -362,7 +362,7 @@ var showPictureBox = (function() {
 
         })
 
-        //给全屏按钮增加点击事件
+        // 给全屏按钮增加点击事件
         fullScreenButton.addEventListener('click',function() {
 
             if(isFullScreen == false) {
@@ -381,7 +381,7 @@ var showPictureBox = (function() {
 
         })
 
-        //遍历获取图片url并给图片增加点击事件
+        // 遍历获取图片url并给图片增加点击事件
         images.forEach(function(value,ind) {
 
             value.addEventListener('click',function() {
