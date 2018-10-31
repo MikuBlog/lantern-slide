@@ -59,7 +59,7 @@ var showPictureBox = (function() {
 
             image.src = url
 
-            //适配pc端与移动端
+            // 适配pc端与移动端
             if(document.body.clientWidth>document.body.clientHeight) {
 
                 if(image.width > image.height) {
