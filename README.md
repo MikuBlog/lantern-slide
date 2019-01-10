@@ -26,6 +26,7 @@
 
 - 1.0.0 - 『简易幻灯片插件』
 - 1.1.0 - 『增加轮播淡入淡出效果』
+- 1.1.1 - 『增加npm安装使用』
 
 <br/>
 
@@ -40,6 +41,14 @@
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 ```
+
+<br/>
+
+#### 使用方法1
+
+<br/>
+
+> 直接安装使用 ```npm install lantern-slide```
 
 <br/>
 
@@ -109,20 +118,6 @@ showPictureBox({
 
 })
 ```
-
-<br/>
-
-## vue使用
-
-<br/>
-
->在```image.main.min.js```末尾添加```export default showPictureBox;```
-
->在所需组件内引入```import showPictureBox from "./xxx/image.main.min.js```
-
->在main.js引入```import './xxx/style.min.css'```
-
->在相应的组件调用showPictureBox函数并传入配置参数即可
 
 <br/>
 
