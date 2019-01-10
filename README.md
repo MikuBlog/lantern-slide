@@ -44,11 +44,56 @@
 
 <br/>
 
-#### 使用方法1
+#### Vue使用方法
 
 <br/>
 
 > 直接安装使用 ```npm install lantern-slide```
+
+> 在main.js中引入```import 'lantern-slide/dist/css/style.min.css'```
+
+> 在所需组件中引入```import showPictureBox from 'lantern-slide'```
+
+> 头部引入如下代码
+
+```
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+```
+
+<br/>
+
+> 在适合的地方加入如下HTML代码
+
+<br/>
+
+```html
+<div class="pic-box pic-box-hide">
+    <div class="pic-back"></div>
+    <div class="pic-button">
+        <span class="pic-icon play-stop">
+            <i class="fa fa-play fa-lg pic-play"></i>
+            <i class="fa fa-pause fa-lg pic-stop"></i>
+        </span>
+        <span class="pic-icon">
+            <i class="fa fa-television fa-lg pic-fullscreen"></i>
+        </span>
+        <span class="pic-icon">
+            <i class="fa fa-close fa-lg pic-close"></i>
+        </span>                    
+    </div>
+    <div class="pic-arrow pic-left">
+        <i class="fa fa-arrow-left fa-lg"></i>
+    </div>
+    <div class="pic-arrow pic-right">
+        <i class="fa fa-arrow-right fa-lg"></i>
+    </div>
+    <img class="pic-img">
+</div>
+```
+
+<br/>
+
+#### HTML页面使用方法
 
 <br/>
 
